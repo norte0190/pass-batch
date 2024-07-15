@@ -1,4 +1,4 @@
-package com.system.pass.repository.packaze;
+package com.system.pass.repository.package0;
 
 import com.system.pass.repository.BaseEntity;
 import lombok.Getter;

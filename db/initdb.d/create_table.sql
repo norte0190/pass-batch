@@ -4,7 +4,8 @@ CREATE TABLE `package`
     `package_name` varchar(50) NOT NULL COMMENT '패키지 이름',
     `count`        int                  DEFAULT NULL COMMENT '이용권 수, NULL인 경우 무제한',
     `period`       int                  DEFAULT NULL COMMENT '기간(일), NULL인 경우 무제한',
-    `created_at`   timestamp   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성 일시',
+    `created_at`   timestam
+    p   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성 일시',
     `modified_at`  timestamp            DEFAULT NULL COMMENT '수정 일시',
     PRIMARY KEY (`package_seq`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='패키지';
