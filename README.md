@@ -6,7 +6,7 @@
 * JPA
 * lombok
 * ModelMapper
-...
+ 
 ## Process
 ### 이용권 만료
 ```mermaid
