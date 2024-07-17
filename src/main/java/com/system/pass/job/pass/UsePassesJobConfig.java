@@ -65,17 +65,15 @@ public class UsePassesJobConfig {
         return new JpaCursorItemReaderBuilder<BookingEntity>()
                 .name("usePassesItemReader")
                 .entityManagerFactory(entityManagerFactory)
-                // 상태(status)가 완료이며, 종료 일시(endedAt)이 과거인 예약이 이용권 차감 대상이 됩니다.
                 .queryString("select b from BookingEntity b join fetch b.passEntity where b.status = :status and b.usedPass = false and b.endedAt < :endedAt")
                 .parameterValues(Map.of("status", BookingStatus.COMPLETED, "endedAt", LocalDateTime.now()))
                 .build();
     }
 
-    // 이 프로젝트에서는 적합하지 않지만, ItemProcessor의 수행이 오래걸려 병목이 생기는 경우에 AsyncItemProcessor, AsyncItemWriter를 사용하면 성능을 향상시킬 수 있습니다.
     @Bean
     public AsyncItemProcessor<BookingEntity, BookingEntity> usePassesAsyncItemProcessor() {
         AsyncItemProcessor<BookingEntity, BookingEntity> asyncItemProcessor = new AsyncItemProcessor<>();
-        asyncItemProcessor.setDelegate(usePassesItemProcessor()); // usePassesItemProcessor로 위임하고 결과를 Future에 저장합니다.
+        asyncItemProcessor.setDelegate(usePassesItemProcessor());
         asyncItemProcessor.setTaskExecutor(new SimpleAsyncTaskExecutor());
         return asyncItemProcessor;
 
