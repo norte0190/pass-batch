@@ -13,11 +13,11 @@
 sequenceDiagram
     participant Batch
     participant DB
-    Batch->>DB: 사용자별 이용권 조회
+    Batch->>DB: 이용권 조회
     activate DB
-    DB->>Batch: 사용자별 이용권 응답
+    DB->>Batch: 이용권 응답
     deactivate DB
-    Batch->>DB: 이용권 만료 상태 변경
+    Batch->>DB: 만료 상태 변경
 ```
 
 ### 이용권 일괄 지급
@@ -26,13 +26,13 @@ sequenceDiagram
     actor User
     participant DB
     participant Batch
-    User->>DB: 일괄 지급 이용권 등록 요청
+    User->>DB: 일괄 지급요청
 
-    Batch->>DB: 일괄 지급 이용권 조회
+    Batch->>DB: 일괄 지급 조회
     activate DB
-    DB->>Batch: 일괄 지급 이용권 응답
+    DB->>Batch: 일괄 지급 응답
     deactivate DB
-    Batch->>DB: 해당 사용자 이용권 추가
+    Batch->>DB: 해당 사용자 추가
 ```
 
 ### 수업 전 알림
@@ -41,9 +41,9 @@ sequenceDiagram
     participant Batch
     participant DB
     participant Messenger
-    Batch->>DB: 예약된 수업, 사용자 조회
+    Batch->>DB: 예약 조회
     activate DB
-    DB->>Batch: 예약된 수업, 사용자 응답
+    DB->>Batch: 예약 응답
     deactivate DB
     Batch->>DB: 알림 대상 추가
     
