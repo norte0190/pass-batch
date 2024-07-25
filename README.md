@@ -1,16 +1,7 @@
-## Preview
+
+## Process
 <img width="1744" alt="Untitled" src="https://github.com/user-attachments/assets/03d11d70-46ae-4454-a57c-1514d71292cc">
 
-## Environments
-* OpenJDK 18.0.1
-* Spring Boot 2.7.3
-* Gradle
-* MySQL (Docker)
-* JPA
-* lombok
-* ModelMapper
- 
-## Process
 ### 이용권 만료
 ```mermaid
 sequenceDiagram
@@ -71,3 +62,13 @@ sequenceDiagram
     deactivate DB
     Batch->>DB: 사용자 별 이용권 차감
 ```
+
+## Environments
+* OpenJDK 18.0.1
+* Spring Boot 2.7.3
+* Gradle
+* MySQL (Docker)
+* JPA
+* lombok
+* ModelMapper
+ 
