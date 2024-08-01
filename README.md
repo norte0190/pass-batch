@@ -1,7 +1,3 @@
-
-## Process
-<img width="1744" alt="Untitled" src="https://github.com/user-attachments/assets/03d11d70-46ae-4454-a57c-1514d71292cc">
-
 ### 이용권 만료
 ```mermaid
 sequenceDiagram
